@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 
 #Example 1
 
-
-
 x = np.linspace(-4,4, 100) 
 l = 3 * np.sin(x) + 9
 r = x**2 - np.cos(x)
@@ -30,6 +28,7 @@ axes[1].set_title(r"$(3\sin(x)+9) - (x^2-\cos(x))=0$")
 fig.tight_layout()
 plt.show()
 
+print(' ')
 #3.2.2
 #Bisection method function
 
