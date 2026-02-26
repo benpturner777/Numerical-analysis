@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 #Example 1
 
 
+
 x = np.linspace(-4,4, 100) 
 l = 3 * np.sin(x) + 9
 r = x**2 - np.cos(x)
