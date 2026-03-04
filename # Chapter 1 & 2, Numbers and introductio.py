@@ -88,6 +88,7 @@ def exp_approx(x, n):
 #exp(-1) approximation
 
 print('exp(-1) order 6 = ', exp_approx(-1, 6))
+print(' ')
 print('accuracy of function', (np.abs(exp_approx(-1,20) - np.exp(-1))))
 
 

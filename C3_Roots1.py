@@ -29,6 +29,7 @@ fig.tight_layout()
 plt.show()
 
 print(' ')
+print(' ')
 #3.2.2
 #Bisection method function
 
