@@ -128,3 +128,31 @@ def bisection_n(f, a, b, n):
 
 print(bisection_n( lambda x: (x**2) - 2, 0, 2, 20))
 
+
+
+def bisection_with_error_tracking(f, x_exact, a, b, tol):
+    """
+    Implements the bisection method and tracks absolute error at each iteration.
+    
+    Parameters:
+        f (callable): Function for which to find the root
+        x_exact (float): The exact root of the function
+        a (float): Left endpoint of initial interval
+        b (float): Right endpoint of initial interval 
+        tol (float): Tolerance for stopping criterion
+        
+    Returns:
+        list: List of absolute errors between approximate and exact solution at each iteration
+    """
+    errors = []
+    while (b - a) / 2.0 > tol:
+        midpoint = (a + b) / 2.0
+        if f(midpoint) == 0:
+            break
+        elif f(a) * f(midpoint) < 0:
+            b = midpoint
+        else:
+            a = midpoint
+        error = abs(midpoint - x_exact)
+        errors.append(error)
+    return errors
