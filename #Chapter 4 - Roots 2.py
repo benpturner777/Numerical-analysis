@@ -66,16 +66,14 @@ def newton_with_error_tracking(f, fprime, x0, x_exact, tol = 1e-10):
     x = x0
     x_new = x - (f(x) / fprime(x))
 
-    for i in range(31):
-        if np.abs(x - x_new) < tol:
-            return errors
-        elif fprime(x) == 0:   #ensure derivative non-zero
+    while np.abs(x - x_new) > tol:
+        if fprime(x) == 0:   #ensure derivative non-zero
             return ValueError('fprime(x) equals 0 causing error - adapt x0')
         x = x_new
+        x_new = x - (f(x) / fprime(x))
         error = float(np.abs(x_new - x_exact))
         errors.append(error)
-        x_new = x - (f(x) / fprime(x))
-    return errors and 'f does not converge within tolerance'
+    return errors 
 
 
 
